@@ -1,14 +1,10 @@
 {
   "name": "extend-datatable-js",
-  "type": "module",
+  "private": false,
+  "packageManager": "pnpm@8.11.0",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "directories": {
-    "doc": "docs",
-    "lib": "lib",
-    "src": "src"
-  },
   "scripts": {
     "lint": "eslint --ext .js ./",
     "format": "prettier --write \"**/*.{js,css,scss,html,md,json}\" --ignore-path .prettierignore",
@@ -17,8 +13,8 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Code-E-Shop",
+  "license": "MIT",
   "dependencies": {
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
