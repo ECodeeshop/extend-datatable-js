@@ -41,6 +41,7 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Install dependencies
         run: pnpm install
+      - run: ls
       - name: Build with VitePress
         run: |
           pnpm docs:build
