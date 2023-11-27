@@ -8,8 +8,8 @@ hero:
   tagline: Export JSON Button, Display `a tag` in Render URL
   actions:
     - theme: brand
-      text: Functions Explained
-      link: /functions-explained
+      text: Live Example
+      link: /example/
     - theme: alt
       text: API Examples
       link: /api-examples
