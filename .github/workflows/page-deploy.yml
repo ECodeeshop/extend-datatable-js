@@ -62,6 +62,7 @@ jobs:
     steps:
       - name: Copy
         run: | 
+          ls
           cp -r docs/example example
           ls
       - name: Deploy to GitHub Pages
