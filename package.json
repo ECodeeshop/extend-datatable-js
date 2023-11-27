@@ -1,6 +1,7 @@
 {
   "name": "extend-datatable-js",
   "private": false,
+  "type": "module",
   "packageManager": "pnpm@8.11.0",
   "version": "1.0.0",
   "description": "",
