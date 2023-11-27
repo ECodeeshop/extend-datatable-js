@@ -2,12 +2,15 @@ name: Page-Deploy
 
 on:
   release:
-    types: [created]    
+    types: [created] 
   
   workflow_dispatch:
 
 jobs:
   build:
+    permissions:
+        pull-requests: write
+        contents: write
     name: Github Page Deploy
     runs-on: ubuntu-latest
     steps:
