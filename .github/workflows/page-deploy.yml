@@ -63,7 +63,7 @@ jobs:
       - name: Copy
         run: | 
           ls
-          cp -r docs/example example
+          # cp -r docs/example example
           ls
       - name: Deploy to GitHub Pages
         id: deployment
