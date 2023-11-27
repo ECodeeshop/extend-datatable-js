@@ -548,13 +548,14 @@ Source Code: https://github.com/ECodeeshop/extend-datatable-js/tree/main/example
 
 <script type="module" async>
   import { urlRenderObj } from '../src/url-render.js'
-    
+    let fallbackTimeout = 30
     if(typeof document != 'undefined') {        
         const t = setInterval(function () {
-        	if(typeof $ != 'undefined') {    		
+        	if(typeof $ != 'undefined' || fallbackTimeout < 1) {    		
     	        registerTable();
     	        clearInterval(t)	    
         	}
+            fallbackTimeout--
         }, 300)
     }
 
