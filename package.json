@@ -12,7 +12,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vitepress dev docs",
     "docs:delete": "rm -rf ./docs/example && rm -rf ./docs/src && rm -rf ./docs/.vitepress/dist/example && rm -rf ./docs/.vitepress/dist/src",
-    "docs:copy": "mkdir ./docs/.vitepress/dist/example && cp -r ./example/assets ./docs/example/assets && cp -r ./src ./docs/src && cp -r ./docs/example ./docs/.vitepress/dist && cp -r ./example/assets ./docs/.vitepress/dist/example/assets && cp -r ./src ./docs/.vitepress/dist/src",
+    "docs:copy": "mkdir ./docs/.vitepress/dist && mkdir ./docs/.vitepress/dist/example && cp -r ./example/assets ./docs/example/assets && cp -r ./src ./docs/src && cp -r ./docs/example ./docs/.vitepress/dist && cp -r ./example/assets ./docs/.vitepress/dist/example/assets && cp -r ./src ./docs/.vitepress/dist/src",
     "docs:build": "pnpm docs:delete && mkdir ./docs/example && pnpm docs:copy && vitepress build docs && pnpm docs:copy",
     "docs:preview": "vitepress preview docs"
   },
