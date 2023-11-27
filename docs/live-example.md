@@ -547,7 +547,7 @@ Source Code: https://github.com/ECodeeshop/extend-datatable-js/tree/main/example
 </table>
 
 <script type="module" async>
-  import { urlRenderObj } from '../src/url-render.js'
+  import { urlRenderObj } from './src/url-render.js'
     let fallbackTimeout = 30
     if(typeof document != 'undefined') {        
         const t = setInterval(function () {

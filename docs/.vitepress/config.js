@@ -12,7 +12,7 @@ export default defineConfig({
     ],
     [
       'script',
-      { async: '', src: '/extend-datatable-js/src/button-json.js', type: 'text/javascript' }
+      { async: true, src: '/extend-datatable-js/src/button-json.js', type: 'text/javascript' }
     ],
     [
       'link',
@@ -24,7 +24,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       // { text: 'Functions Explained', link: '/functions-explained' },
-      { text: 'Live Example', link: '/example/' },
+      { text: 'Live Example', link: '/live-example' },
       { text: 'API Examples', link: '/api-examples' }
     ],
 
@@ -33,7 +33,7 @@ export default defineConfig({
         text: 'Examples',
         items: [
           // { text: 'Functions Explained', link: '/functions-explained' },
-          { text: 'Live Example', link: '/example/' },
+          { text: 'Live Example', link: '/live-example' },
           { text: 'API Examples', link: '/api-examples' }
         ]
       }
