@@ -548,13 +548,15 @@ Source Code: https://github.com/ECodeeshop/extend-datatable-js/tree/main/example
 
 <script type="module" async>
   import { urlRenderObj } from '../src/url-render.js'
-
-    const t = setInterval(function () {
-    	if(typeof $ != 'undefined') {    		
-	        registerTable();
-	        clearInterval(t)	    
-    	}
-    }, 300)
+    
+    if(typeof document != 'undefined') {        
+        const t = setInterval(function () {
+        	if(typeof $ != 'undefined') {    		
+    	        registerTable();
+    	        clearInterval(t)	    
+        	}
+        }, 300)
+    }
 
     function registerTable() {
         $('#example').DataTable( {
