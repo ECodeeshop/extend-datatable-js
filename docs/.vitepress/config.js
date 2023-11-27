@@ -2,7 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Extend Datatable.js",
+  title: "➕ Extend Datatable.js",
+  base: "/extend-datatable-js/"
   description: "Export JSON Button, Display `a tag` URL in Render",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
