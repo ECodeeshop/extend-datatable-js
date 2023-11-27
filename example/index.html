@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Table</title>
+</head>
+<body>
+    <link href="assets/datatables.min.css" rel="stylesheet">
+    <script src="assets/datatables.min.js"></script>
+    <script type="text/javascript" src="../src/button-json.js"></script>
+
+    <div include-html="table.html"></div>
+
+    <script type="module">
+      import { urlRenderObj } from '../src/url-render.js'
+
+      function includeHTML() {
+          var z, i, elmnt, file, xhttp;
+          /*loop through a collection of all HTML elements:*/
+          z = document.getElementsByTagName("*");
+          for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain attribute:*/
+            file = elmnt.getAttribute("include-html");
+            if (file) {
+              /*make an HTTP request using the attribute value as the file name:*/
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                  /*remove the attribute, and call this function once more:*/
+                  elmnt.removeAttribute("include-html");
+                  includeHTML();
+                  registerTable()
+                }
+              }
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              /*exit the function:*/
+              return;
+            }
+          }
+        };
+
+        $(document).ready(function() {
+            includeHTML();
+        } );
+
+        function registerTable() {
+            $('#example').DataTable( {
+                dom: "Bflrtip",
+                responsive: true,
+                select: true,
+                colReorder: true,
+                dom: 'Bfrtip',
+                buttons: [
+                    // "colvis",
+                    // "selectAll",
+                    // "selectNone",
+                    {
+                        extend: 'json',
+                        text: 'JSON',
+                        filename: "json-filename",
+                    },
+                ],
+                columns: [
+                    { title: 'Name' },
+                    { title: 'Position' },
+                    { title: 'Office' },
+                    { title: 'Age' },
+                    { title: 'Start Date' },
+                    { title: 'Salary' },
+                    { title: 'URL', ...urlRenderObj("URL") },
+                  ],
+            } );
+        }
+    </script>
+</body>
+</html>
